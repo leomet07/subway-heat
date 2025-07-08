@@ -1,3 +1,7 @@
+<script lang="ts">
+    import MapContainer from "$lib/components/MapContainer.svelte";
+</script>
+
 <header class="header">
     <hgroup>
         <h1 class="title">Subway Heat Map</h1>
@@ -7,6 +11,8 @@
         </p>
     </hgroup>
 </header>
+
+<MapContainer />
 
 <section>
     <!-- Platform -->
