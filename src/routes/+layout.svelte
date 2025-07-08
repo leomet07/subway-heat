@@ -7,3 +7,9 @@
 <main class="container">
     <slot />
 </main>
+
+<style scoped>
+    .container {
+        max-width: 1000px;
+    }
+</style>
