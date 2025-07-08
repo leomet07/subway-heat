@@ -1,4 +1,4 @@
-# MTA Map Demo
+# Subway Heat Project Demo
 
 Why use Svelte-Kit for this static website? Flexibility — maybe it won't be a static website in the future... 
 
