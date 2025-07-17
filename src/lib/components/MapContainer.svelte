@@ -11,6 +11,7 @@
     import { browser } from "$app/environment";
     import "leaflet/dist/leaflet.css";
     import type { MTAStop } from "$lib/types";
+    import MapPopup from "./MapPopup.svelte";
 
     interface MapContainerProps {
         collectedStops: MTAStop[];
@@ -44,6 +45,32 @@
 
             map.setView(defaultViewCoords, 11);
 
+            // Create a popup with a Svelte component inside it and handle removal when the popup is torn down.
+            // `createFn` will be called whenever the popup is being created, and should create and return the component.
+            // Credit: https://svelte.dev/repl/62271e8fda854e828f26d75625286bc3?version=4.2.18
+            function bindPopup(
+                marker: Marker | CircleMarker,
+                createFn: (arg0: HTMLElement) => MapPopup,
+            ) {
+                let popupComponent: MapPopup | null;
+                marker.bindPopup(() => {
+                    let container = leaflet.DomUtil.create("div");
+                    popupComponent = createFn(container);
+                    return container;
+                });
+
+                marker.on("popupclose", () => {
+                    if (popupComponent) {
+                        let old = popupComponent;
+                        popupComponent = null;
+                        // Wait to destroy until after the fadeout completes.
+                        setTimeout(() => {
+                            unmount(old);
+                        }, 500);
+                    }
+                });
+            }
+
             for (const stop of collectedStops) {
                 let marker = leaflet
                     .circleMarker(
@@ -63,6 +90,17 @@
                     .addEventListener("click", (e) => {
                         console.log("Marker clicked: ", stop);
                     });
+
+                //@ts-ignore
+                bindPopup(marker, (container) => {
+                    let c = mount(MapPopup, {
+                        target: container,
+                        props: {
+                            stop : stop
+                        }, // i don't know if these props will update dynamically, warning for the future
+                    });
+                    return c;
+                });
             }
         }
     });
