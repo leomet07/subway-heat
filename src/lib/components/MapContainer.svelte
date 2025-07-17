@@ -1,74 +1,90 @@
 <script lang="ts">
-    import { mount, onMount, unmount } from "svelte";
-    import Map from "./Map.svelte";
+    import { onDestroy, onMount, mount, unmount } from "svelte";
+    import type {
+        CircleMarker,
+        ImageOverlay,
+        LatLngBounds,
+        LatLngTuple,
+        Map,
+        Marker,
+    } from "leaflet";
+    import { browser } from "$app/environment";
+    import "leaflet/dist/leaflet.css";
 
-    let selectedLayerIndex = $state<string>("0");
-    let targetElement: HTMLDivElement;
+    let mapElement: HTMLElement;
+    let map: Map;
 
-    let layer_arcgis_ids = [
-        "fc2060f60b0f4ba18e02b3594a2eae37",
-        "b8a09d4b85264272a4718b10477017f9",
-        "4fcfbaddb2804adc8aa3e7dc958ce0b8",
-        "31c569068074431b9e759fd75aa23007",
-        "26096e4e441f46efbb2ef5256d0bd084",
-        "2f482466cc6c41b3ad38d6de9d4d6395",
-    ];
+    const defaultViewCoords: LatLngTuple = [40.7826, -73.9656]; // Central park coords
 
-    let layer_names = [
-        "Platform Heat Index",
-        "Street Level Heat Index",
-        "Platform Air Temperature",
-        "Street Level Temperature",
-        "Platform Relative Humidity",
-        "Street Level Relative Humidity",
-    ];
-
-    let mountedMap: any;
-
-    async function handleMapChange() {
-        unmount(mountedMap);
-        mountedMap = mount(Map, {
-            target: targetElement,
-            props: {
-                mapid: layer_arcgis_ids[Number(selectedLayerIndex)],
-            },
-        });
-    }
-
-    // on page load
     onMount(async () => {
-        await handleMapChange();
+        if (browser && window) {
+            const leaflet = await import("leaflet");
+
+            map = leaflet.map(mapElement, {
+                attributionControl: false,
+                preferCanvas: true,
+            }); // use canvas for better performance
+
+            leaflet
+                .tileLayer(
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    {
+                        attribution:
+                            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                    },
+                )
+                .addTo(map);
+
+            map.setView(defaultViewCoords, 11);
+
+            // for (const lake of lakes) {
+            //     let marker = leaflet
+            //         .circleMarker(
+            //             // circle marker for better performance (cred: https://stackoverflow.com/a/43019740)
+            //             { lat: lake.latitude, lng: lake.longitude },
+            //             {
+            //                 radius: 8,
+            //                 fillOpacity: 1,
+            //                 fillColor: "#fff42c",
+            //                 color: "black",
+            //             },
+            //         )
+            //         .addTo(map)
+            //         .addEventListener("click", (e) => {
+            //             console.log("Marker clicked: ", lake);
+            //         });
+            // }
+        }
     });
 </script>
 
-<article class="card">
-    <h3>June 24th, 2025 Map: {layer_names[Number(selectedLayerIndex)]}</h3>
-    <div bind:this={targetElement} class="map-div"></div>
+<div class="map" bind:this={mapElement}></div>
 
-    <select
-        name="favorite-cuisine"
-        bind:value={selectedLayerIndex}
-        onchange={handleMapChange}
-    >
-        <option selected value="0">Platform Heat Index</option>
-        <option value="1">Street Level Heat Index</option>
-        <option value="2">Platform Air Temperature</option>
-        <option value="3">Street Level Temperature</option>
-        <option value="4">Platform Relative Humidity</option>
-        <option value="5">Street Level Relative Humidity</option>
-    </select>
-</article>
-
-<style scoped>
-    .map-div {
-        margin-bottom: 1rem;
-        /* Match container size to map size so no layout shift occurs when map loads  */
+<style>
+    .map {
         width: 100%;
-        max-width: calc(1000px - calc(2 * --pico-spacing));
-        height: 600px;
+        height: 80vh;
+        height: 80dvh; /* Will be ignored when not supported */
+    }
+    /* Override styles applied by picocss */
+    :global(.leaflet-control-zoom) {
+        border: none !important;
+        padding-bottom: 2px !important;
+    }
+    :global(.leaflet-control-zoom [role="button"]) {
+        padding: 0px !important;
+        border-radius: 0% !important;
+    }
+    :global(.leaflet-control-zoom a:last-child) {
+        border-bottom: var(--pico-border-width) solid var(--pico-border-color) !important;
     }
 
-    .card select {
-        margin-bottom: 0;
+    :global(.leaflet-marker-icon) {
+        background-color: transparent !important;
+        border: none !important;
+    }
+
+    :global(.leaflet-popup-close-button) {
+        padding: 0px !important;
     }
 </style>
