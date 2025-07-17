@@ -10,6 +10,13 @@
     } from "leaflet";
     import { browser } from "$app/environment";
     import "leaflet/dist/leaflet.css";
+    import type { MTAStop } from "$lib/types";
+
+    interface MapContainerProps {
+        stops: MTAStop[];
+        uniqueStops: MTAStop[];
+    }
+    let { stops, uniqueStops }: MapContainerProps = $props();
 
     let mapElement: HTMLElement;
     let map: Map;
@@ -37,23 +44,26 @@
 
             map.setView(defaultViewCoords, 11);
 
-            // for (const lake of lakes) {
-            //     let marker = leaflet
-            //         .circleMarker(
-            //             // circle marker for better performance (cred: https://stackoverflow.com/a/43019740)
-            //             { lat: lake.latitude, lng: lake.longitude },
-            //             {
-            //                 radius: 8,
-            //                 fillOpacity: 1,
-            //                 fillColor: "#fff42c",
-            //                 color: "black",
-            //             },
-            //         )
-            //         .addTo(map)
-            //         .addEventListener("click", (e) => {
-            //             console.log("Marker clicked: ", lake);
-            //         });
-            // }
+            for (const stop of stops) {
+                let marker = leaflet
+                    .circleMarker(
+                        // circle marker for better performance (cred: https://stackoverflow.com/a/43019740)
+                        {
+                            lat: Number(stop.gtfs_latitude),
+                            lng: Number(stop.gtfs_longitude),
+                        },
+                        {
+                            radius: 4,
+                            fillOpacity: 1,
+                            fillColor: "#fff42c",
+                            color: "black",
+                        },
+                    )
+                    .addTo(map)
+                    .addEventListener("click", (e) => {
+                        console.log("Marker clicked: ", stop);
+                    });
+            }
         }
     });
 </script>

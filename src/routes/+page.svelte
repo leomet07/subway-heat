@@ -1,5 +1,8 @@
 <script lang="ts">
     import MapContainer from "$lib/components/MapContainer.svelte";
+    import type { PageProps } from "./$types";
+
+    let { data }: PageProps = $props();
 </script>
 
 <header class="header">
@@ -11,4 +14,4 @@
     </hgroup>
 </header>
 
-<MapContainer />
+<MapContainer stops={data.stops} uniqueStops={data.uniqueStops} />

@@ -1,5 +1,7 @@
 # Subway Heat Project Demo
 
+Locations of stations (stops.json) are from this dataset: https://data.ny.gov/Transportation/MTA-Subway-Stations/39hk-dx4f/about_data
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
