@@ -4,7 +4,7 @@
             <a href="/" class="contrast"><strong>Maps</strong></a>
         </li>
         <li>
-            <a href="/demo">Demo</a>
+            <a href="/demo" class="contrast">July 24th Demo</a>
         </li>
     </ul>
     <ul>
