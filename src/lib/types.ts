@@ -1,3 +1,5 @@
+// thank you https://app.quicktype.io/
+
 export interface MTAStop {
     readonly gtfs_stop_id: string;
     readonly station_id: string;
