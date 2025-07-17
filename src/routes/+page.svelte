@@ -14,4 +14,8 @@
     </hgroup>
 </header>
 
-<MapContainer collectedStops={data.collectedStops} uniqueStops={data.uniqueStops} />
+<MapContainer
+    collectedStops={data.collectedStops}
+    uniqueStops={data.uniqueStops}
+    collectedData={data.collectedData}
+/>

@@ -10,14 +10,16 @@
     } from "leaflet";
     import { browser } from "$app/environment";
     import "leaflet/dist/leaflet.css";
-    import type { MTAStop } from "$lib/types";
+    import type { CollectedDataPoint, MTAStop } from "$lib/types";
     import MapPopup from "./MapPopup.svelte";
 
     interface MapContainerProps {
         collectedStops: MTAStop[];
         uniqueStops: MTAStop[];
+        collectedData: CollectedDataPoint[];
     }
-    let { collectedStops, uniqueStops }: MapContainerProps = $props();
+    let { collectedStops, uniqueStops, collectedData }: MapContainerProps =
+        $props();
 
     let mapElement: HTMLElement;
     let map: Map;
@@ -96,7 +98,8 @@
                     let c = mount(MapPopup, {
                         target: container,
                         props: {
-                            stop : stop
+                            stop: stop,
+                            collectedData,
                         }, // i don't know if these props will update dynamically, warning for the future
                     });
                     return c;
