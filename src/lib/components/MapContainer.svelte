@@ -13,10 +13,10 @@
     import type { MTAStop } from "$lib/types";
 
     interface MapContainerProps {
-        stops: MTAStop[];
+        collectedStops: MTAStop[];
         uniqueStops: MTAStop[];
     }
-    let { stops, uniqueStops }: MapContainerProps = $props();
+    let { collectedStops, uniqueStops }: MapContainerProps = $props();
 
     let mapElement: HTMLElement;
     let map: Map;
@@ -44,7 +44,7 @@
 
             map.setView(defaultViewCoords, 11);
 
-            for (const stop of stops) {
+            for (const stop of collectedStops) {
                 let marker = leaflet
                     .circleMarker(
                         // circle marker for better performance (cred: https://stackoverflow.com/a/43019740)

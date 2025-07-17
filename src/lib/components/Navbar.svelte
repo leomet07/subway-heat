@@ -1,10 +1,13 @@
 <nav class="container-fluid">
     <ul>
         <li>
-            <a href="/" class="contrast"><strong>Maps</strong></a>
+            <a href="/" class="contrast"><strong>Historical</strong></a>
         </li>
         <li>
             <a href="/demo" class="contrast">June 24th Demo</a>
+        </li>
+        <li>
+            <a href="/timeseries" class="contrast">Time Series</a>
         </li>
     </ul>
     <ul>
