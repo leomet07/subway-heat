@@ -1,13 +1,11 @@
 <h1 class="title">About</h1>
+
 <p>
-    With support from the MTA, CityTech students are collecting temperatures at
-    both the street level and platform level at subway stations in New York City
-    to observe patterns and analyze the <a
-        href="https://www.epa.gov/heatislands">urban heat island's effect</a
+    In collaboration with the MTA, CityTech and Eco Rising are analyzing Subway temperatures across New York City MTA stations to observe patterns and analyze the <a
+    href="https://www.epa.gov/heatislands">urban heat island's effect</a
     > on underground subway stations.
-</p>
-<p>
-    Through an analysis of temperatures collected, we will build an interactive
+    CityTech students are collecting temperatures at
+    both the street level and platform level at these subway stations and through an analysis of temperatures collected, we will build an interactive
     dashboard that allows people to access generalized weather information
     through a geospatial web component.
 </p>
@@ -19,7 +17,7 @@
     historical subway records.
 </p>
 
-<h2>Abstract</h2>
+<h2>Project Description</h2>
 <p>
     New York City faces significant challenges due to the accelerating impacts
     of climate change. The most affected infrastructures are underground
@@ -33,6 +31,12 @@
     conducts a comprehensive investigation into temperature variability across
     multiple subway stations in NYC, aiming to inform future mitigation
     strategies and urban planning.
+</p>
+
+<h2>People</h2>
+
+<p>
+    
 </p>
 
 <h2>Website Source Code</h2>
