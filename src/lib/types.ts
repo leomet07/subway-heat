@@ -57,3 +57,26 @@ export enum Structure {
     Subway = "Subway",
     Viaduct = "Viaduct",
 }
+
+export interface CollectedDataPoint {
+    readonly Timestamp: string;
+    readonly "Name of the data collector": string;
+    readonly Date: string;
+    readonly Services: string;
+    readonly "Station name": string;
+    readonly "Platform level air temperature": string;
+    readonly "Platform level relative humidity": string;
+    readonly "Number (ID) of the infrared image ": string;
+    readonly "How crowded is the platform?": string;
+    readonly "Time for platform level data collection": string;
+    readonly "Street level air temperature": string;
+    readonly "Street level air temperature - Sunny conditions (complete only if there is no shady spot near the subway entrance)": string;
+    readonly "Street level relative humidity": string;
+    readonly "Time for street level data collection": string;
+    readonly "Cloud cover": string;
+    readonly Rain: string;
+    readonly Notes: string;
+    readonly "Main level (Turnstile level) air temperature (Only for deep stations)": string;
+    readonly "Main level (Turnstile level) relative humidity (Only for deep stations)": string;
+    readonly gtfs_stop_id: string;
+}

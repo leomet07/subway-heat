@@ -1,7 +1,7 @@
 import type { PageServerLoad } from './$types';
 import StopsFileJSON from "$lib/stops.json";
 import CollectedDataCSVString from "$lib/collected_data_with_gtfs_id.csv?raw"; // load as string
-import type { MTAStop } from "$lib/types";
+import type { MTAStop, CollectedDataPoint } from "$lib/types";
 import { parse } from "csv-parse/sync";
 
 export const load: PageServerLoad = async () => {
@@ -10,13 +10,11 @@ export const load: PageServerLoad = async () => {
         index === self.findIndex((t) => t.stop_name === obj.stop_name)
     );
 
-    let CollectedDataCSV = parse(CollectedDataCSVString, {
+    let collectedData = parse<CollectedDataPoint>(CollectedDataCSVString, {
         columns: true,
     });
 
-    console.log(CollectedDataCSV);
-
-    let gtfs_ids = new Set(CollectedDataCSV.map((v: any) => String(v.gtfs_stop_id)));
+    let gtfs_ids = new Set(collectedData.map((v) => v.gtfs_stop_id));
 
     let collectedStops: MTAStop[] = [];
 
@@ -29,6 +27,7 @@ export const load: PageServerLoad = async () => {
     return {
         stops,
         uniqueStops,
-        collectedStops
+        collectedStops,
+        collectedData
     };
 };
