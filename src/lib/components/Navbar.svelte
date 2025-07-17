@@ -3,6 +3,9 @@
         <li>
             <a href="/" class="contrast"><strong>Maps</strong></a>
         </li>
+        <li>
+            <a href="/demo">Demo</a>
+        </li>
     </ul>
     <ul>
         <li>

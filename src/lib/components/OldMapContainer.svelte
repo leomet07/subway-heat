@@ -1,6 +1,6 @@
 <script lang="ts">
     import { mount, onMount, unmount } from "svelte";
-    import Map from "./Map.svelte";
+    import OldMap from "./OldMap.svelte";
 
     let selectedLayerIndex = $state<string>("0");
     let targetElement: HTMLDivElement;
@@ -27,7 +27,7 @@
 
     async function handleMapChange() {
         unmount(mountedMap);
-        mountedMap = mount(Map, {
+        mountedMap = mount(OldMap, {
             target: targetElement,
             props: {
                 mapid: layer_arcgis_ids[Number(selectedLayerIndex)],
