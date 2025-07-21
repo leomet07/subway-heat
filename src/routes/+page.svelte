@@ -1,5 +1,6 @@
 <script lang="ts">
     import MapContainer from "$lib/components/MapContainer.svelte";
+    import Timeline from "$lib/components/Timeline.svelte";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
@@ -14,8 +15,11 @@
     </hgroup>
 </header>
 
+<Timeline orderedDatesList={data.orderedDatesList} />
+
 <MapContainer
     collectedStops={data.collectedStops}
     uniqueStops={data.uniqueStops}
     collectedData={data.collectedData}
+    orderedDatesList={data.orderedDatesList}
 />

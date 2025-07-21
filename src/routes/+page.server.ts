@@ -17,10 +17,11 @@ export const load: PageServerLoad = async () => {
     collectedData.sort((a, b) => { return (new Date(a["platform_collection_timestamp"]).getTime()) - (new Date(b["platform_collection_timestamp"]).getTime()) })
 
     let gtfs_ids = new Set(collectedData.map((v) => v.gtfs_stop_id));
+    let orderedDatesList = new Set(collectedData.map((v) => v["Date"])).values().toArray();
 
     let collectedStops: MTAStop[] = [];
 
-    for (let stop of stops) {
+    for (let stop of uniqueStops) {
         if (gtfs_ids.has(stop.gtfs_stop_id)) {
             collectedStops.push(stop);
         }
@@ -30,6 +31,7 @@ export const load: PageServerLoad = async () => {
         stops,
         uniqueStops,
         collectedStops,
-        collectedData
+        collectedData,
+        orderedDatesList
     };
 };
