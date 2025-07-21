@@ -79,6 +79,9 @@
         </p>
     {/if}
     <button onclick={selectStation}> Select this station </button>
+    <a href={`/timeseries/${stop.gtfs_stop_id}`} role="button">
+        View Timeseries
+    </a>
 </div>
 
 <style scoped>
@@ -93,5 +96,9 @@
     }
     .collection_info_div .platform_timestamp {
         margin-top: 0.5rem;
+    }
+    .popup a {
+        margin-top: 0.5rem;
+        color: white;
     }
 </style>
