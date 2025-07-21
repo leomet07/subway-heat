@@ -20,6 +20,7 @@
         collectedStops: MTAStop[];
         uniqueStops: MTAStop[];
         collectedData: CollectedDataPoint[];
+        targetVariable: keyof CollectedDataPoint;
     }
     let { collectedStops, uniqueStops, collectedData }: MapContainerProps =
         $props();
@@ -33,6 +34,7 @@
         currentDateIndex: number,
         currentGTFS_ID: string | undefined,
         orderedDatesList: string[],
+        targetVariable: keyof CollectedDataPoint,
     ) => {};
 
     $effect(() => {
@@ -40,6 +42,7 @@
             currentViewInfo.currentDateIndex,
             currentViewInfo.currentGTFS_ID,
             currentViewInfo.orderedDatesList,
+            currentViewInfo.targetVariable,
         );
     });
 
@@ -99,11 +102,10 @@
                 currentDateIndex: number,
                 currentGTFS_ID: string | undefined,
                 orderedDatesList: string[],
+                targetVariable: keyof CollectedDataPoint,
             ) => {
                 console.log("Placing circles: ", currentGTFS_ID);
                 circleMarkerLayerGroup.clearLayers(); // remove all markers
-                const targetVariable: keyof CollectedDataPoint =
-                    "Platform level heat index";
 
                 for (const stop of collectedStops) {
                     let fillColor = `rgba(120,120,120,1)`; // grey
@@ -173,6 +175,7 @@
                 currentViewInfo.currentDateIndex,
                 currentViewInfo.currentGTFS_ID,
                 currentViewInfo.orderedDatesList,
+                currentViewInfo.targetVariable,
             );
         }
     });
