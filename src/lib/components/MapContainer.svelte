@@ -15,6 +15,7 @@
     import { currentViewInfo } from "$lib/CurrentViewInfo.svelte";
     import { colorsArray } from "./ColorScaleUtils";
     import ColorScale from "./ColorScale.svelte";
+    import TargetVariableChooser from "./TargetVariableChooser.svelte";
 
     interface MapContainerProps {
         collectedStops: MTAStop[];
@@ -181,6 +182,7 @@
     });
 </script>
 
+<TargetVariableChooser />
 <ColorScale min={minValue} max={maxValue} />
 <div class="map" bind:this={mapElement}></div>
 
