@@ -5,7 +5,7 @@ interface currentViewInfoType {
 }
 
 export const currentViewInfo: currentViewInfoType = $state({
-    currentDateIndex: 0,
+    currentDateIndex: 135,
     currentGTFS_ID: undefined,
     orderedDatesList: []
 });
