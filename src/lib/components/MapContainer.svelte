@@ -43,8 +43,8 @@
         );
     });
 
-    let minValue = $state<number | undefined>(undefined);
-    let maxValue = $state<number | undefined>(undefined);
+    let minValue = $state<number | undefined>(80);
+    let maxValue = $state<number | undefined>(110);
 
     onMount(async () => {
         if (browser && window) {
@@ -104,22 +104,6 @@
                 circleMarkerLayerGroup.clearLayers(); // remove all markers
                 const targetVariable: keyof CollectedDataPoint =
                     "Platform level heat index";
-
-                // color scale stuff
-                let allDataThisDay = collectedData.filter(
-                    (v) => v.Date == orderedDatesList[currentDateIndex],
-                );
-                minValue = Math.max(
-                    Math.min(...allDataThisDay.map((v) => v[targetVariable])),
-                    70,
-                ); // lowest min val is 70
-
-                maxValue = Math.min(
-                    Math.max(...allDataThisDay.map((v) => v[targetVariable])),
-                    130,
-                ); // highest max val is 130
-
-                // end color scale stuff
 
                 for (const stop of collectedStops) {
                     let fillColor = `rgba(120,120,120,1)`; // grey
