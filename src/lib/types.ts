@@ -62,8 +62,8 @@ export enum Structure {
 
 export interface CollectedDataPoint {
     readonly Timestamp: string;
-    readonly "Name of the data collector": string;
     readonly Date: string;
+    readonly platform_collection_timestamp: string;
     readonly Services: string;
     readonly "Station name": string;
     readonly "Platform level air temperature": string;
