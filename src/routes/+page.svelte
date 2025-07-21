@@ -1,4 +1,5 @@
 <script lang="ts">
+    import ColorScale from "$lib/components/ColorScale.svelte";
     import MapContainer from "$lib/components/MapContainer.svelte";
     import Timeline from "$lib/components/Timeline.svelte";
     import { currentViewInfo } from "$lib/CurrentViewInfo.svelte";
@@ -18,7 +19,7 @@
 </header>
 
 <Timeline collectedStops={data.collectedStops} />
-
+<ColorScale />
 <MapContainer
     collectedStops={data.collectedStops}
     uniqueStops={data.uniqueStops}
