@@ -17,11 +17,10 @@
     </hgroup>
 </header>
 
-<Timeline />
+<Timeline collectedStops={data.collectedStops} />
 
 <MapContainer
     collectedStops={data.collectedStops}
     uniqueStops={data.uniqueStops}
     collectedData={data.collectedData}
-    orderedDatesList={data.orderedDatesList}
 />
