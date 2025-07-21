@@ -14,7 +14,7 @@ export const load: PageServerLoad = async () => {
         columns: true,
     });
 
-    collectedData.sort((a, b) => { return (new Date(a["Timestamp"]).getTime()) - (new Date(b["Timestamp"]).getTime()) })
+    collectedData.sort((a, b) => { return (new Date(a["platform_collection_timestamp"]).getTime()) - (new Date(b["platform_collection_timestamp"]).getTime()) })
 
     let gtfs_ids = new Set(collectedData.map((v) => v.gtfs_stop_id));
 

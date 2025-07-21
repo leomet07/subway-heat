@@ -498,7 +498,6 @@ Timestamp,Name of the data collector,Date,Services,Station name,Platform level a
 8/1/2024 9:57:35,Cesar Pascal Vasquez,2024-08-01,BD,Tremont Av,87.7,60.3,391-394,Light,9:38:00 AM,85.8,,56.7,9:40:00 AM,Clear,,,,,D07,2024-08-01 09:38:00
 8/1/2024 11:58:18,Cesar Pascal Vasquez,2024-08-01,BD,Tremont Av,87.9,62.2,395-399,Light,11:57:00 AM,85.9,,"51,7",11:59:00 AM,Clear,,,,,D07,2024-08-01 11:57:00
 8/1/2024 12:58:50,Cesar Pascal Vasquez,2024-08-02,BD,191 St,91.3,65.3,472-477,Medium,12:47:00 PM,90.2,,66,12:53:00 PM,Clear,,,,,110,2024-08-02 12:47:00
-7/1/2024 13:16:57,Cesar Pascal Vasquez,2034-07-01,BD,Fordham Rd,82.8,41.9,N/a,Light,1:16:00 PM,83.2,,44.4,1:14:00 AM,Clear,,,,,D05,2034-07-01 13:16:00
 9/13/2024 1:14:24,Cesar Pascal Vasquez,2024-09-12,BD,161 St-Yankee Stadium,80,66.3,,Light,10:36:00 AM,81.1,,61.4,10:43:00 AM,Clear,,,,,D11,2024-09-12 10:36:00
 9/13/2024 1:16:31,Cesar Pascal Vasquez,2024-09-12,BD,163 St-Amsterdam Av,79.7,60.3,,Light,10:53:00 AM,80.3,,55.8,10:55:00 AM,Clear,,,,,A10,2024-09-12 10:53:00
 9/13/2024 1:20:08,Cesar Pascal Vasquez,2024-09-12,BD,167 St,78.9,63.4,,Light,11:06:00 AM,77.3,,63.2,11:08:00 AM,Clear,,,,,D10,2024-09-12 11:06:00
@@ -2114,7 +2113,6 @@ Timestamp,Name of the data collector,Date,Services,Station name,Platform level a
 11/5/2024 13:02:01,Shaquan Larose,2024-11-05,C,Ralph Av,79.6,46.3,,Light,12:59:00 PM,78.1,,42.9,1:01:00 PM,Clear,,,,,A49,2024-11-05 12:59:00
 11/5/2024 13:19:32,Shaquan Larose,2024-11-05,C,Rockaway Av,84.6,41.8,,Light,1:16:00 PM,78.7,,44. 1,1:19:00 PM,Clear,,,,,A50,2024-11-05 13:16:00
 11/5/2024 14:14:37,Shaquan Larose,2024-11-05,C,Lafayette Av,83.2,44,,Light,2:11:00 PM,78.2,,41.2,2:06:00 PM,Clear,,,,,A43,2024-11-05 14:11:00
-11/5/2024 14:30:40,Shaquan Larose,2025-11-05,C,Nostrand Av,83.4,39.6,,Light,2:23:00 PM,78.4,,39.9,2:28:00 PM,Clear,,,,,A46,2025-11-05 14:23:00
 11/5/2024 14:37:01,Shaquan Larose,2024-11-05,C,Kingston-Throop Avs,82.3,41.4,,Light,2:34:00 PM,82.2,,41.4,2:36:00 PM,Clear,,,,,A47,2024-11-05 14:34:00
 11/5/2024 14:52:54,Shaquan Larose,2024-11-05,C,Utica Av,84.7,44.7,,Light,2:49:00 PM,79.7,,43.8,2:52:00 PM,Clear,,,,,A48,2024-11-05 14:49:00
 11/5/2024 15:02:57,Shaquan Larose,2024-11-05,C,Ralph Av,83.3,47.5,,Light,2:58:00 PM,74.8,,45.8,2:59:00 PM,Clear,,,,,A49,2024-11-05 14:58:00
@@ -3652,7 +3650,6 @@ Timestamp,Name of the data collector,Date,Services,Station name,Platform level a
 6/18/2025 13:39:31,Malique Paul,2025-06-18,AC,Shepherd Av,84,64,,Light,1:36:00 PM,84,,61.7,1:39:00 PM,Clear,,,,,A54,2025-06-18 13:36:00
 6/18/2025 13:48:35,Malique Paul,2025-06-18,AC,Van Siclen Av,84.3,71.7,,Light,1:45:00 PM,83.8,,66.8,1:48:00 PM,Clear,,,,,A53,2025-06-18 13:45:00
 6/18/2025 13:58:57,Malique Paul,2025-06-18,AC,Liberty Av,82.5,63.8,,Light,1:55:00 PM,85.8,,64.8,1:58:00 PM,Clear,,,,,A52,2025-06-18 13:55:00
-6/18/2025 14:19:22,Malique Paul,2025-08-18,AC,Rockaway Av,80,67.6,,Light,2:14:00 PM,83.5,,69.9,2:19:00 PM,Clear,,,,,A50,2025-08-18 14:14:00
 6/18/2025 14:31:46,Malique Paul,2025-06-18,AC,Ralph Av,82,67.8,,Light,2:28:00 PM,85.1,,68,2:31:00 PM,Clear,,,,,A49,2025-06-18 14:28:00
 6/18/2025 15:13:27,Damilola BabsOgundeji,2025-06-18,AC,High St,81.3,71.6,,Light,3:13:00 PM,81.2,,73.8,3:10:00 PM,Clear,,,,,A40,2025-06-18 15:13:00
 6/18/2025 15:26:08,Damilola BabsOgundeji,2025-06-18,AC,Hoyt-Schermerhorn,84.3,63.2,,Medium,3:25:00 PM,85.8,,64.9,3:22:00 PM,Clear,,,,,A42,2025-06-18 15:25:00
@@ -4044,7 +4041,6 @@ Timestamp,Name of the data collector,Date,Services,Station name,Platform level a
 6/26/2025 10:27:06,Kiran Maharjan,2025-06-26,EFMR,Steinway St,83.6,39.5,Flir1153-1156,Light,10:24:00 AM,77.2,,44.1,10:26:00 AM,Overcast,,,,,G19,2025-06-26 10:24:00
 6/26/2025 10:27:48,Shaquan Larose,2025-06-26,C,Lafayette Av,82.9,55.3,FLIR0162,Light,10:23:00 PM,80.9,,53.6,10:27:00 AM,Overcast,,,,,A43,2025-06-26 22:23:00
 6/26/2025 10:37:35,Kiran Maharjan,2025-06-26,EFMR,46 St,82.7,51.5,Flir1157-1160,Light,10:33:00 AM,77.1,,49.5,10:35:00 AM,Overcast,,,,,G18,2025-06-26 10:33:00
-6/26/2025 10:39:31,Babacar Sarr,2026-06-26,DNR,Bay Ridge-95 St,84.7,65.8,FLiR1177,Light,10:35:00 AM,81.5,,52.2,10:33:00 AM,Clear,,,,,R45,2026-06-26 10:35:00
 6/26/2025 10:39:57,Addree Barua,2025-06-26,25,President St-Medgar Evers College,89.7,48,"Flir0531,0532,0533",Medium,10:35:00 AM,,90.1,47.7,10:39:00 AM,Overcast,,,,,241,2025-06-26 10:35:00
 6/26/2025 10:44:21,Shaquan Larose,2025-06-26,C,Clinton-Washington Avs,81.7,55.4,FLIR0163,Light,10:40:00 AM,81,,55.8,10:44:00 AM,Overcast,,,,,A44,2025-06-26 10:40:00
 6/26/2025 10:45:08,Rean Shahidullah,2025-06-26,S,Times Sq-42 St,85.6,60,"FLIR1087, FLIR1088, FLIR1089",Light,10:42:00 AM,83.7,,57.8,10:44:00 AM,Clear,,,,,902,2025-06-26 10:42:00
@@ -4247,7 +4243,6 @@ Timestamp,Name of the data collector,Date,Services,Station name,Platform level a
 6/30/2025 10:09:09,Shaquan Larose,2025-06-30,C,High St,88.2,54.6,,Light,10:05:00 AM,84.6,,60.9,10:02:00 AM,Clear,,,,,A40,2025-06-30 10:05:00
 6/30/2025 10:10:28,Kiran Maharjan,2025-06-30,EFMR,Steinway St,85.3,51.5,Flir1195-1198,Light,10:05:00 AM,86.5,,51.4,10:07:00 AM,Clear,,,,,G19,2025-06-30 10:05:00
 6/30/2025 10:15:04,Shaquan Larose,2025-06-30,AC,Hoyt-Schermerhorn,88.6,50.9,FLIR0169,Light,10:12:00 AM,86.1,,49.9,10:14:00 AM,Clear,,,,,A42,2025-06-30 10:12:00
-6/30/2025 10:17:37,Kiran Maharjan,2026-06-30,EFMR,46 St,88.9,52.9,Flir1199-1203,Light,10:12:00 AM,88.7,,50.9,10:14:00 AM,Clear,,,,,G18,2026-06-30 10:12:00
 6/30/2025 10:25:22,Kiran Maharjan,2025-06-30,BDFM,65 St,86.4,51.2,Flir1204-1207,Light,10:20:00 AM,91.8,,51.3,10:23:00 AM,Clear,,,,,G15,2025-06-30 10:20:00
 6/30/2025 10:32:16,Addree Barua,2025-06-30,25,Flatbush Av-Brooklyn College,83.8,56.9,"FLIR0563,0564,0565",Light,10:30:00 AM,,85.9,58.9,10:32:00 AM,Clear,,,,,247,2025-06-30 10:30:00
 6/30/2025 10:34:30,Babacar Sarr,2025-06-30,DNR,Bay Ridge-95 St,80.3,58.3,FLIR1268,Light,10:34:00 AM,80,,56.9,10:29:00 AM,Clear,,,,,R45,2025-06-30 10:34:00
@@ -4398,7 +4393,6 @@ Timestamp,Name of the data collector,Date,Services,Station name,Platform level a
 6/30/2025 18:15:26,Damilola BabsOgundeji,2025-06-30,C,Lafayette Av,86.7,61.9,,Light,6:14:00 PM,84.4,,62.5,6:10:00 PM,Clear,,,,,A43,2025-06-30 18:14:00
 6/30/2025 18:29:51,Damilola BabsOgundeji,2025-06-30,C,Clinton-Washington Avs,86.2,58.3,,Light,6:27:00 PM,86.3,,60.4,6:28:00 PM,Clear,,,,,A44,2025-06-30 18:27:00
 6/30/2025 21:49:44,Isaac Morel,2025-06-30,BD,161 St-Yankee Stadium,81.8,52,91009200930094,Heavy,9:36:00 AM,83,,61.3,9:42:00 AM,Overcast,,"A very crowded station, but with stable conditions",,,D11,2025-06-30 09:36:00
-6/30/2025 21:53:53,Isaac Morel,2025-09-30,BD,161 St-Yankee Stadium,82.5,63.2,131013201330134,Medium,11:41:00 AM,82.6,,65.3,11:43:00 AM,Clear,,,,,D11,2025-09-30 11:41:00
 6/30/2025 21:59:20,Isaac Morel,2025-06-30,BD,167 St,82.2,57,"0095, 0096, 0097, 0098",Light,9:49:00 AM,83.3,,62.3,9:52:00 AM,Overcast,,Very empty station,,,D10,2025-06-30 09:49:00
 6/30/2025 22:02:11,Isaac Morel,2025-06-30,BD,167 St,81.6,54.3,"0135, 0136, 0137, 0138",Light,11:54:00 AM,83.5,,60,11:59:00 AM,Overcast,,,,,D10,2025-06-30 11:54:00
 6/30/2025 22:05:37,Isaac Morel,2025-06-30,BD,170 St,85.3,58.3,99010001010102,Light,9:58:00 AM,85.2,,60.5,9:59:00 AM,Clear,,,,,D09,2025-06-30 09:58:00
@@ -5215,7 +5209,6 @@ Timestamp,Name of the data collector,Date,Services,Station name,Platform level a
 7/8/2025 10:37:42,Babacar Sarr,2025-07-08,DNR,36 St,92.4,52.9,FLIR1522,Medium,10:33:00 AM,90.6,,58,10:37:00 AM,Clear,,,,,R36,2025-07-08 10:33:00
 7/8/2025 10:39:53,Shaquan Larose,2025-07-08,C,Lafayette Av,90.4,56.4,FLIR0259,Light,10:32:00 AM,89.8,,60,10:39:00 AM,Clear,,,,,A43,2025-07-08 10:32:00
 7/8/2025 10:44:43,Kiran Maharjan,2025-07-08,EFMR,Elmhurst Av,88.4,58.3,Flir0153-0156,Light,10:39:00 AM,89.7,,58.6,10:42:00 AM,Clear,,,,,G13,2025-07-08 10:39:00
-7/8/2025 10:50:18,Babacar Sarr,2025-08-07,DNR,25 St,89,57.4,FLIR1527,Light,10:41:00 AM,89.6,,56.2,10:44:00 AM,Clear,,,,,R35,2025-08-07 10:41:00
 7/8/2025 10:52:58,Kiran Maharjan,2025-07-08,EFMR,Grand Av-Newtown,91.2,53.7,Flir01570160,Light,10:46:00 AM,95.2,95.2,56.6,10:49:00 AM,Clear,,,,,G12,2025-07-08 10:46:00
 7/8/2025 10:54:23,Rean & Addree,2025-07-08,25,Newkirk Av-Little Haiti,88.1,76.9,"FLIR1200,FLIR1201,1202",Light,10:51:00 AM,89.6,,70.2,10:54:00 AM,Clear,,,,,246,2025-07-08 10:51:00
 7/8/2025 10:55:51,Kingston Ditsch,2025-07-08,L,Montrose Av,81.8,82.5,FLIR0162,Light,10:53:00 AM,88.9,,69.7,10:56:00 AM,Clear,,,,,L13,2025-07-08 10:53:00
