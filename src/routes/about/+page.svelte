@@ -114,18 +114,17 @@
           <p>Malique Paul</p>
           <p>Anton Nikitin</p>
           <p>Cesar Vasquez</p>
-          </div><div>
           <p>Isaac Lopez</p>
-          <p>Isaac Lopez</p>
+          </div><div>  
           <p>Addree Barua</p>
           <p>Kiran Maharjan</p>
-        </div>
-        <div> 
           <p>Babacar Sarr</p>
           <p>Tyler Ayala</p>
           <p>Rean Shahidullah</p>
+        </div>
+        <div> 
+           
           <p>Kingston Wills Ditsch</p>
-        </div><div>
           <p>Kevin Balbuena Montes </p>
           <p>Shaquan Larose</p>
           <p>Brigette Alejandro</p>
