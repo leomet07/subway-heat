@@ -43,8 +43,8 @@
         );
     });
 
-    let minValue = $state<number | undefined>(80);
-    let maxValue = $state<number | undefined>(110);
+    let minValue = $state<number>(80);
+    let maxValue = $state<number>(110);
 
     onMount(async () => {
         if (browser && window) {

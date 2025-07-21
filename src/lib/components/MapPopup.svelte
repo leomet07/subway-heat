@@ -32,36 +32,38 @@
     {#if matched_collected_data.length > 0}
         <div class="collection_info_div">
             <p>
-                Platform Level Heat Index: {matched_collected_data[0][
-                    "Platform level heat index"
-                ]}°F
+                Platform Level Heat Index: {Number(
+                    matched_collected_data[0]["Platform level heat index"],
+                ).toFixed(2)}°F
             </p>
             <p>
-                Platform Level Air Temperature: {matched_collected_data[0][
-                    "Platform level air temperature"
-                ]}°F
+                Platform Level Air Temperature: {Number(
+                    matched_collected_data[0]["Platform level air temperature"],
+                ).toFixed(2)}°F
             </p>
             <p>
-                Platform Level Relative Humidity: {matched_collected_data[0][
-                    "Platform level relative humidity"
-                ]}%
+                Platform Level Relative Humidity: {Number(
+                    matched_collected_data[0][
+                        "Platform level relative humidity"
+                    ],
+                ).toFixed(2)}%
             </p>
 
             <hr />
             <p>
-                Street Level Heat Index: {matched_collected_data[0][
-                    "Street level heat index"
-                ]}°F
+                Street Level Heat Index: {Number(
+                    matched_collected_data[0]["Street level heat index"],
+                ).toFixed(2)}°F
             </p>
             <p>
-                Street Level Air Temperature: {matched_collected_data[0][
-                    "Street level air temperature"
-                ]}°F
+                Street Level Air Temperature: {Number(
+                    matched_collected_data[0]["Street level air temperature"],
+                ).toFixed(2)}°F
             </p>
             <p>
-                Street Level Relative Humidity: {matched_collected_data[0][
-                    "Street level relative humidity"
-                ]}%
+                Street Level Relative Humidity: {Number(
+                    matched_collected_data[0]["Street level relative humidity"],
+                ).toFixed(2)}%
             </p>
             <hr />
             <p class="platform_timestamp">
