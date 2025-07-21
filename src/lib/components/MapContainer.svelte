@@ -123,7 +123,7 @@
                                 lng: Number(stop.gtfs_longitude),
                             },
                             {
-                                radius: 4,
+                                radius: 6,
                                 fillOpacity: 1,
                                 fillColor: fillColor,
                                 color: "black",
