@@ -1,9 +1,11 @@
 <script lang="ts">
     import MapContainer from "$lib/components/MapContainer.svelte";
     import Timeline from "$lib/components/Timeline.svelte";
+    import { currentViewInfo } from "$lib/CurrentViewInfo.svelte";
     import type { PageProps } from "./$types";
 
     let { data }: PageProps = $props();
+    currentViewInfo.orderedDatesList = data.orderedDatesList;
 </script>
 
 <header class="header">
@@ -15,7 +17,7 @@
     </hgroup>
 </header>
 
-<Timeline orderedDatesList={data.orderedDatesList} />
+<Timeline />
 
 <MapContainer
     collectedStops={data.collectedStops}

@@ -18,23 +18,26 @@
         collectedStops: MTAStop[];
         uniqueStops: MTAStop[];
         collectedData: CollectedDataPoint[];
-        orderedDatesList: string[];
     }
-    let {
-        collectedStops,
-        uniqueStops,
-        collectedData,
-        orderedDatesList,
-    }: MapContainerProps = $props();
+    let { collectedStops, uniqueStops, collectedData }: MapContainerProps =
+        $props();
 
     let mapElement: HTMLElement;
     let map: Map;
 
     const defaultViewCoords: LatLngTuple = [40.7826, -73.9656]; // Central park coords
 
-    let placeCircles = (currentDateIndex: number) => {};
+    let placeCircles = (
+        currentDateIndex: number,
+        currentGTFS_ID: string | undefined,
+        orderedDatesList: string[],
+    ) => {};
     $effect(() => {
-        placeCircles(currentViewInfo.currentDateIndex);
+        placeCircles(
+            currentViewInfo.currentDateIndex,
+            currentViewInfo.currentGTFS_ID,
+            currentViewInfo.orderedDatesList,
+        );
     });
 
     onMount(async () => {
@@ -86,7 +89,12 @@
                 });
             }
 
-            placeCircles = (currentDateIndex: number) => {
+            placeCircles = (
+                currentDateIndex: number,
+                currentGTFS_ID: string | undefined,
+                orderedDatesList: string[],
+            ) => {
+                console.log("Placing circles: ", currentGTFS_ID);
                 circleMarkerLayerGroup.clearLayers(); // remove all markers
 
                 for (const stop of collectedStops) {
@@ -140,7 +148,11 @@
                 }
             };
 
-            placeCircles(currentViewInfo.currentDateIndex);
+            placeCircles(
+                currentViewInfo.currentDateIndex,
+                currentViewInfo.currentGTFS_ID,
+                currentViewInfo.orderedDatesList,
+            );
         }
     });
 </script>

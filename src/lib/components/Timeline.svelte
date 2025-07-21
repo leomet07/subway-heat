@@ -1,17 +1,15 @@
 <script lang="ts">
     import { currentViewInfo } from "$lib/CurrentViewInfo.svelte";
-
-    interface TimelineProps {
-        orderedDatesList: string[];
-    }
-    let { orderedDatesList }: TimelineProps = $props();
 </script>
 
 <article class="card">
     <h1>Timeline</h1>
-    <p>Currently selected station ID: none</p>
     <p>
-        Currently selected date: {orderedDatesList[
+        Currently selected station ID: {currentViewInfo.currentGTFS_ID ??
+            "None"}
+    </p>
+    <p>
+        Currently selected date: {currentViewInfo.orderedDatesList[
             currentViewInfo.currentDateIndex
         ]}
     </p>
