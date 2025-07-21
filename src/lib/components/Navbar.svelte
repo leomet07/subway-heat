@@ -6,9 +6,6 @@
         <li>
             <a href="/demo" class="contrast">June 24th Demo</a>
         </li>
-        <li>
-            <a href="/timeseries" class="contrast">Time Series</a>
-        </li>
     </ul>
     <ul>
         <li>

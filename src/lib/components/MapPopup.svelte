@@ -101,4 +101,14 @@
         margin-top: 0.5rem;
         color: white;
     }
+
+    .popup button,
+    .popup a {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    .popup hr {
+        margin-block: 0.25rem;
+    }
 </style>
