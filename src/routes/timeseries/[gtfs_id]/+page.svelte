@@ -1,6 +1,9 @@
 <script lang="ts">
     import { browser } from "$app/environment";
     import { page } from "$app/state";
+    import { onMount } from "svelte";
+    import type { PageProps } from "./$types";
+    import { currentViewInfo } from "$lib/CurrentViewInfo.svelte";
     import {
         Chart,
         Title,
@@ -12,8 +15,14 @@
         LinearScale,
         LineElement,
         LineController,
+        TimeScale,
     } from "chart.js";
-    import { onMount } from "svelte";
+    import "chartjs-adapter-date-fns";
+    import TargetVariableChooser from "$lib/components/TargetVariableChooser.svelte";
+    import type { CollectedDataPoint } from "$lib/types";
+
+    let { data }: PageProps = $props();
+
     let gtfs_id: string = page.params.gtfs_id;
     let chartElement: HTMLCanvasElement;
 
@@ -27,32 +36,69 @@
         LinearScale,
         CategoryScale,
         PointElement,
+        TimeScale,
     );
 
-    let Xs: any[] = [1, 2];
-    let Ys: number[] = [4, 5];
+    let matchedStation = data.collectedStops.filter(
+        (v) => v.gtfs_stop_id == gtfs_id,
+    )[0];
+
+    $effect(() => {
+        load_chart(currentViewInfo.targetVariable);
+    });
+
+    let myChart: Chart<"line", number[], any> | undefined;
+
+    function load_chart(targetVariable: keyof CollectedDataPoint) {
+        if (myChart) {
+            myChart.destroy();
+        }
+        let thisStationData = data.collectedData.filter(
+            (v) => v.gtfs_stop_id == gtfs_id,
+        );
+
+        let Xs: any[] = thisStationData.map((v) => v["Date"]);
+        let Ys: number[] = thisStationData.map((v) =>
+            Number(v[targetVariable]),
+        );
+        myChart = new Chart(chartElement, {
+            type: "line",
+            data: {
+                labels: Xs,
+                datasets: [
+                    {
+                        label: "Squares",
+                        data: Ys,
+                        fill: false,
+                        borderColor: "rgb(75, 192, 192)",
+                        tension: 0.1,
+                    },
+                ],
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: "time",
+                        time: {
+                            unit: "day",
+                        },
+                    },
+                },
+            },
+        });
+    }
 
     onMount(() => {
         if (browser && window) {
-            new Chart(chartElement, {
-                type: "line",
-                data: {
-                    labels: Xs,
-                    datasets: [
-                        {
-                            label: "Squares",
-                            data: Ys,
-                            fill: false,
-                            borderColor: "rgb(75, 192, 192)",
-                        },
-                    ],
-                },
-            });
+            load_chart(currentViewInfo.targetVariable);
         }
     });
 </script>
 
-<h1>Time series for {gtfs_id}</h1>
+<h1>
+    Time Series for {matchedStation.stop_name} ({matchedStation.daytime_routes})
+</h1>
+<TargetVariableChooser />
 <div>
     <canvas id="myChart" bind:this={chartElement}></canvas>
 </div>
