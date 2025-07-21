@@ -102,19 +102,23 @@
             ) => {
                 console.log("Placing circles: ", currentGTFS_ID);
                 circleMarkerLayerGroup.clearLayers(); // remove all markers
-                const targetVariable =
-                    "Platform level air temperature" as const;
+                const targetVariable: keyof CollectedDataPoint =
+                    "Platform level heat index";
 
                 // color scale stuff
                 let allDataThisDay = collectedData.filter(
                     (v) => v.Date == orderedDatesList[currentDateIndex],
                 );
-                minValue = Math.min(
-                    ...allDataThisDay.map((v) => parseInt(v[targetVariable])),
-                );
-                maxValue = Math.max(
-                    ...allDataThisDay.map((v) => parseInt(v[targetVariable])),
-                );
+                minValue = Math.max(
+                    Math.min(...allDataThisDay.map((v) => v[targetVariable])),
+                    70,
+                ); // lowest min val is 70
+
+                maxValue = Math.min(
+                    Math.max(...allDataThisDay.map((v) => v[targetVariable])),
+                    130,
+                ); // highest max val is 130
+
                 // end color scale stuff
 
                 for (const stop of collectedStops) {
@@ -139,6 +143,12 @@
                         let closest_index = Math.round(
                             placeOnOneScale * colorsArray.length,
                         );
+                        if (closest_index < 0) {
+                            closest_index = 0;
+                        }
+                        if (closest_index > colorsArray.length - 1) {
+                            closest_index = colorsArray.length - 1;
+                        }
                         fillColor = colorsArray[closest_index];
                     }
 
