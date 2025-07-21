@@ -43,7 +43,7 @@
             alt="Dr. Abdou Bah" 
             style="width:250px; height:250px; object-fit:cover !important;"
             />
-        <h3>Dr. Abdou Bah</h3>
+        <h3>Prof. Abdou Bah</h3>
         <p>Professor in the Physics department <br /> NYC College of Technology</p>
         <p>Research interests: Remote sensing, spatial analysis, and climate change.</p>
       </div>
@@ -65,7 +65,7 @@
             alt="Dr. Hamrideza Norouzi" 
             style="width:250px; height:250px; object-fit:cover !important;"
             />
-        <h3>Dr. Hamrideza Norouzi</h3>
+        <h3>Prof. Hamrideza Norouzi</h3>
         <p>Professor in the Department of Construction Management and Civil Engineering Technology<br />NYC College of Technology</p>
         <p>Research interests: GIS, remote sensing, earth system sciences, urban climate.</p>
       </div>
@@ -78,7 +78,7 @@
           <div> 
             <div>
                 <img
-                src="/img/street_rh.png"
+                src="/img/anon.png"
                 alt="Leonid Metlitsky" 
                 style="width:250px; height:250px; object-fit:cover !important;"
                 />
@@ -107,26 +107,36 @@
   
     <div>
       <h3>CityTech Students</h3>
+      <p>Most of the data collected for the past year was done by CityTech Students who went into the subways to collect Platform and Street level temperatures and relative humidity.</p>
       <div class="grid md:grid-cols-3 gap-4">
         <div> 
-          <p>__</p>
-          <p>__</p>
+          <p>Damilola BabsOgundeji </p>
+          <p>Malique Paul</p>
+          <p>Anton Nikitin</p>
+          <p>Cesar Vasquez</p>
+          </div><div>
+          <p>Isaac Lopez</p>
+          <p>Isaac Lopez</p>
+          <p>Addree Barua</p>
+          <p>Kiran Maharjan</p>
         </div>
         <div> 
-          <p>__</p>
-          <p>__</p>
-        </div>
-        <div> 
-          <p>__</p>
-          <p>__</p>
-        </div>
-      </div>
+          <p>Babacar Sarr</p>
+          <p>Tyler Ayala</p>
+          <p>Rean Shahidullah</p>
+          <p>Kingston Wills Ditsch</p>
+        </div><div>
+          <p>Kevin Balbuena Montes </p>
+          <p>Shaquan Larose</p>
+          <p>Brigette Alejandro</p>
+          <p>Hailah Nagi </p>
+        </div> 
     </div>
   
     <div>
       <h3>INSPIRE Program Contributors</h3>
       <div>
-        __
+        Thank you to everyone involved in the INSPIRE program; high school students learned how to use FLIR thermal cameras and collected temperatures out in the field for a day.
       </div>
     </div>
   </section>
