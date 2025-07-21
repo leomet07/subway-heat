@@ -25,7 +25,7 @@
     let mapElement: HTMLElement;
     let map: Map;
 
-    const defaultViewCoords: LatLngTuple = [40.7826, -73.9656]; // Central park coords
+    const defaultViewCoords: LatLngTuple = [40.7326, -73.9356]; // Central park coords
 
     let placeCircles = (
         currentDateIndex: number,
@@ -162,8 +162,8 @@
 <style>
     .map {
         width: 100%;
-        height: 80vh;
-        height: 80dvh; /* Will be ignored when not supported */
+        height: 65vh;
+        height: 65dvh; /* Will be ignored when not supported */
     }
     /* Override styles applied by picocss */
     :global(.leaflet-control-zoom) {
