@@ -1,10 +1,10 @@
-import type { PageServerLoad } from './$types';
+import type { LayoutServerLoad } from './$types';
 import StopsFileJSON from "$lib/stops.json";
 import CollectedDataCSVString from "$lib/collected_data_with_gtfs_id.csv?raw"; // load as string
 import type { MTAStop, CollectedDataPoint } from "$lib/types";
 import { parse } from "csv-parse/sync";
 
-export const load: PageServerLoad = async () => {
+export const load: LayoutServerLoad = async () => {
     let stops = StopsFileJSON as MTAStop[];
     const uniqueStops = stops.filter((obj, index, self) =>
         index === self.findIndex((t) => t.stop_name === obj.stop_name)
