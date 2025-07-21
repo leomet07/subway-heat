@@ -8,27 +8,26 @@
             ? collectedStops.filter(
                   (v) => v.gtfs_stop_id == currentViewInfo.currentGTFS_ID,
               )[0].stop_name
-            : "None",
+            : undefined,
     );
 </script>
 
 <article class="card">
-    <h1>Timeline</h1>
+    {#if station_name}
+        <p>Currently using timeline for {station_name}</p>
+    {:else}
+        <p>Using timeline consisting of all data collection points.</p>
+    {/if}
     <p>
-        Currently selected station: {station_name}
+        {currentViewInfo.orderedDatesList[currentViewInfo.currentDateIndex]}
     </p>
-    <p>
-        Currently selected date: {currentViewInfo.orderedDatesList[
-            currentViewInfo.currentDateIndex
-        ]}
-    </p>
-
+    <div></div>
     <button onclick={() => currentViewInfo.currentDateIndex--}>Left</button>
     <button onclick={() => currentViewInfo.currentDateIndex++}>Right</button>
 </article>
 
 <style scoped>
     .card {
-        outline: 1px solid red;
+        /* outline: 1px solid red; */
     }
 </style>
