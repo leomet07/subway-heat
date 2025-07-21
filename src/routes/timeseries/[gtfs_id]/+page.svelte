@@ -57,7 +57,10 @@
             (v) => v.gtfs_stop_id == gtfs_id,
         );
 
-        let Xs: any[] = thisStationData.map((v) => v["Date"]);
+        let Xs: any[] = thisStationData.map(
+            (v) => new Date(v["platform_collection_timestamp"]),
+            // TODO: Adjust this to be street level collection timestamp after updating CSV
+        );
         let Ys: number[] = thisStationData.map((v) =>
             Number(v[targetVariable]),
         );
@@ -67,7 +70,7 @@
                 labels: Xs,
                 datasets: [
                     {
-                        label: "Squares",
+                        label: targetVariable,
                         data: Ys,
                         fill: false,
                         borderColor: "rgb(75, 192, 192)",
@@ -82,6 +85,10 @@
                         time: {
                             unit: "day",
                         },
+                        title: { display: true, text: "Collection Timestamp" },
+                    },
+                    y: {
+                        title: { display: true, text: targetVariable },
                     },
                 },
             },
