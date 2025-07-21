@@ -47,8 +47,42 @@
         );
     });
 
-    let minValue = $state<number>(80);
-    let maxValue = $state<number>(110);
+    let minValue = $derived.by<number>(() => {
+        if (currentViewInfo.targetVariable.includes("heat index")) {
+            return 80;
+        } else if (currentViewInfo.targetVariable.includes("air temperature")) {
+            return 80;
+        } else if (
+            currentViewInfo.targetVariable.includes("relative humidity")
+        ) {
+            return 40;
+        }
+        return NaN;
+    });
+    let maxValue = $derived.by<number>(() => {
+        if (currentViewInfo.targetVariable.includes("heat index")) {
+            return 100;
+        } else if (currentViewInfo.targetVariable.includes("air temperature")) {
+            return 100;
+        } else if (
+            currentViewInfo.targetVariable.includes("relative humidity")
+        ) {
+            return 90;
+        }
+        return NaN;
+    });
+    let unit = $derived.by<string>(() => {
+        if (currentViewInfo.targetVariable.includes("heat index")) {
+            return "°F";
+        } else if (currentViewInfo.targetVariable.includes("air temperature")) {
+            return "°F";
+        } else if (
+            currentViewInfo.targetVariable.includes("relative humidity")
+        ) {
+            return "%";
+        }
+        return "";
+    });
 
     onMount(async () => {
         if (browser && window) {
@@ -183,7 +217,7 @@
 </script>
 
 <TargetVariableChooser />
-<ColorScale min={minValue} max={maxValue} />
+<ColorScale min={minValue} max={maxValue} {unit} />
 <div class="map" bind:this={mapElement}></div>
 
 <style>

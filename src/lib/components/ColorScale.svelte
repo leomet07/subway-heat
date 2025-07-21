@@ -5,12 +5,12 @@
         colorsArray,
     } from "$lib/components/ColorScaleUtils";
 
-    let { min, max }: { min: number | undefined; max: number | undefined } =
+    let { min, max, unit }: { min: number; max: number; unit: string } =
         $props();
 </script>
 
 <div class="color-scale-container">
-    <span>{min}°F</span>
+    <span>{min}{unit}</span>
     <div class="color-scale" style={`width : ${colorScaleWidth}px`}>
         {#each colorsArray as color, index}
             <span style={`background-color: ${color}; width: ${stepWidth}px;`}>
@@ -18,7 +18,7 @@
             </span>
         {/each}
     </div>
-    <span>{max}°F</span>
+    <span>{max}{unit}</span>
 </div>
 
 <style scoped>
