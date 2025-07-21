@@ -21,7 +21,6 @@
         collectedStops: MTAStop[];
         uniqueStops: MTAStop[];
         collectedData: CollectedDataPoint[];
-        targetVariable: keyof CollectedDataPoint;
     }
     let { collectedStops, uniqueStops, collectedData }: MapContainerProps =
         $props();
