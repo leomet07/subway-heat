@@ -1,32 +1,46 @@
 <script lang="ts">
-    import chroma from "chroma-js";
+    import {
+        colorScaleWidth,
+        stepWidth,
+        colorsArray,
+    } from "$lib/components/ColorScaleUtils";
 
-    let colorScaleWidth = 1000;
-    let stepWidth = 1;
-    let numberOfSteps = colorScaleWidth / stepWidth;
-    let colors = chroma
-        .scale(["green", "yellow", "red"])
-        .mode("lch")
-        .colors(numberOfSteps);
+    let { min, max }: { min: number | undefined; max: number | undefined } =
+        $props();
 </script>
 
 <div>
-    <h1>Color Scale</h1>
-    <div class="color-scale" style={`width : ${colorScaleWidth}px`}>
-        {#each colors as color, index}
-            <span style={`background-color: ${color}; width: ${stepWidth}px;`}
-            ></span>
-        {/each}
+    <div class="color-scale-container">
+        <span>{min}°F</span>
+        <div class="color-scale" style={`width : ${colorScaleWidth}px`}>
+            {#each colorsArray as color, index}
+                <span
+                    style={`background-color: ${color}; width: ${stepWidth}px;`}
+                >
+                    <!-- Empty span -->
+                </span>
+            {/each}
+        </div>
+        <span>{max}°F</span>
     </div>
 </div>
 
 <style scoped>
     .color-scale {
         display: flex;
-        height: 50px;
+        height: 30px;
         max-width: 100%;
     }
     .color-scale span {
         height: 100%;
+    }
+    .color-scale-container {
+        display: flex;
+    }
+    .color-scale-container span {
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 </style>

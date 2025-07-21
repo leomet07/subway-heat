@@ -13,6 +13,8 @@
     import type { CollectedDataPoint, MTAStop } from "$lib/types";
     import MapPopup from "./MapPopup.svelte";
     import { currentViewInfo } from "$lib/CurrentViewInfo.svelte";
+    import { colorsArray } from "./ColorScaleUtils";
+    import ColorScale from "./ColorScale.svelte";
 
     interface MapContainerProps {
         collectedStops: MTAStop[];
@@ -32,6 +34,7 @@
         currentGTFS_ID: string | undefined,
         orderedDatesList: string[],
     ) => {};
+
     $effect(() => {
         placeCircles(
             currentViewInfo.currentDateIndex,
@@ -39,6 +42,9 @@
             currentViewInfo.orderedDatesList,
         );
     });
+
+    let minValue = $state<number | undefined>(undefined);
+    let maxValue = $state<number | undefined>(undefined);
 
     onMount(async () => {
         if (browser && window) {
@@ -96,6 +102,20 @@
             ) => {
                 console.log("Placing circles: ", currentGTFS_ID);
                 circleMarkerLayerGroup.clearLayers(); // remove all markers
+                const targetVariable =
+                    "Platform level air temperature" as const;
+
+                // color scale stuff
+                let allDataThisDay = collectedData.filter(
+                    (v) => v.Date == orderedDatesList[currentDateIndex],
+                );
+                minValue = Math.min(
+                    ...allDataThisDay.map((v) => parseInt(v[targetVariable])),
+                );
+                maxValue = Math.max(
+                    ...allDataThisDay.map((v) => parseInt(v[targetVariable])),
+                );
+                // end color scale stuff
 
                 for (const stop of collectedStops) {
                     let fillColor = `rgba(120,120,120,1)`; // grey
@@ -112,7 +132,14 @@
                         allDataThisStop.length > 0 &&
                         dataThisStopThisDay.length > 0
                     ) {
-                        fillColor = `rgb(255,255,0)`; // yellow
+                        let placeOnOneScale =
+                            (Number(dataThisStopThisDay[0][targetVariable]) -
+                                minValue) /
+                            (maxValue - minValue);
+                        let closest_index = Math.round(
+                            placeOnOneScale * colorsArray.length,
+                        );
+                        fillColor = colorsArray[closest_index];
                     }
 
                     let marker = leaflet
@@ -157,6 +184,7 @@
     });
 </script>
 
+<ColorScale min={minValue} max={maxValue} />
 <div class="map" bind:this={mapElement}></div>
 
 <style>
