@@ -32,6 +32,11 @@
     {#if matched_collected_data.length > 0}
         <div class="collection_info_div">
             <p>
+                Platform Level Heat Index: {matched_collected_data[0][
+                    "Platform level heat index"
+                ]}°F
+            </p>
+            <p>
                 Platform Level Air Temperature: {matched_collected_data[0][
                     "Platform level air temperature"
                 ]}°F
@@ -40,6 +45,13 @@
                 Platform Level Relative Humidity: {matched_collected_data[0][
                     "Platform level relative humidity"
                 ]}%
+            </p>
+
+            <hr />
+            <p>
+                Street Level Heat Index: {matched_collected_data[0][
+                    "Street level heat index"
+                ]}°F
             </p>
             <p>
                 Street Level Air Temperature: {matched_collected_data[0][
@@ -51,6 +63,7 @@
                     "Street level relative humidity"
                 ]}%
             </p>
+            <hr />
             <p class="platform_timestamp">
                 Platform data collected at {matched_collected_data[0]
                     .platform_collection_timestamp}
