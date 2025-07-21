@@ -29,7 +29,7 @@
     .color-scale {
         display: flex;
         height: 30px;
-        max-width: 100%;
+        max-width: calc(100% - 100px);
     }
     .color-scale span {
         height: 100%;
