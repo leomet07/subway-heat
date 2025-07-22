@@ -39,6 +39,8 @@
         TimeScale,
     );
 
+    Chart.defaults.color = "#fff"; // Sets default text color for labels, tooltips, etc.
+
     let matchedStation = data.collectedStops.filter(
         (v) => v.gtfs_stop_id == gtfs_id,
     )[0];
