@@ -11,5 +11,6 @@
 <style scoped>
     .container {
         max-width: 1000px;
+        padding-bottom: 5vh;
     }
 </style>
